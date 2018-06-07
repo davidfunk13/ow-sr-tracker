@@ -5,7 +5,7 @@ export default class Main extends Component {
     return (
       <div className="container">
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Hello {this.props.name}. To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div className="text">ayo whats gud?</div>
       </div>
