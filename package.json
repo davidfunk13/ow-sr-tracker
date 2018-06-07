@@ -1,0 +1,28 @@
+{
+  "name": "ow-sr-tracker",
+  "version": "1.0.0",
+  "description": "Personal Sr tracker for Overwatch",
+  "main": "server.js",
+  "scripts": {
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidfunk13/ow-sr-tracker.git"
+  },
+  "author": "Dave Funk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidfunk13/ow-sr-tracker/issues"
+  },
+  "homepage": "https://github.com/davidfunk13/ow-sr-tracker#readme",
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}
