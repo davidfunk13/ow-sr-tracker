@@ -15,8 +15,10 @@ window.setState = (changes) => {
 }
 
 /* eslint no-restricted-globals: 0*/
+let username = auth.getProfile().nickname || "Anon User"
+
 let initialState = {
-    name: "Dave",
+    name: username,
     location: location.pathname.replace(/^\/?|\/$/g, ""),
     auth
 }
