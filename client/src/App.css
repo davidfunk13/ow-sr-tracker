@@ -9,7 +9,13 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 1.7rem; }
+
+.btn {
+  width: 10rem;
+  height: 4rem;
+  border: 1px solid black; }
 
 .app-header {
   height: 20vh;

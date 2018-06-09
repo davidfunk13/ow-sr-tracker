@@ -26,6 +26,8 @@ class App extends Component {
       <div className="app">
         <header className="app-header">
           <h1>welcome to OW SR tracker, {this.props.name}</h1>
+          <button className='btn btn-login' onClick={this.props.auth.login}>Login</button>
+          <button className='btn btn-logout' onClick={this.props.auth.logout}>Logout</button>
         </header>
         {mainComponent}
       </div>
