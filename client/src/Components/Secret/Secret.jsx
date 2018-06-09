@@ -5,9 +5,8 @@ export default class Secret extends Component {
         return (
             <div className="secret-container">
                 <p>secret area</p>
-
-               <a href="/">Go Home</a>
-               <button onClick={this.props.auth.logout}>Logout</button>
+                <a href="/">Go Home</a>
+                <button onClick={this.props.auth.logout}>Logout</button>
             </div>
         )
     }
