@@ -2,12 +2,13 @@
 
 # dependencies
 /node_modules
+# /src/sass
 
 # testing
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
