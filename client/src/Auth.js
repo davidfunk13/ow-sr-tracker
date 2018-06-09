@@ -53,6 +53,7 @@ export default class Auth {
   getProfile() {
     if (localStorage.getItem("id_token")) {
         console.log(jwtDecode(localStorage.getItem("id_token")))
+        console.log(localStorage.getItem("id_token"));
         return jwtDecode(localStorage.getItem("id_token"));
     } else {
         return {}
