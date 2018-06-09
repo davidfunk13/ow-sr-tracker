@@ -1,0 +1,17 @@
+Add new season button or pull up current season in progress button
+
+Ask user name (battletag)
+ask "main" (for comparison of stats ((at least wins or losses))to other heros later)
+ask for current (starting) SR
+
+bring user to table where add game button is.
+
+add game triggers modal
+
+- map pictures to click on to select map,
+- hero icons to select hero.
+
+--- is the match over?
+	-did you win?
+	-did you play any other heros?
+	--submit
