@@ -1,0 +1,32 @@
+.header{
+    border: 1px solid black;
+    height: 25vh;
+    position: relative;
+    background-image: linear-gradient(to bottom right, rgba($color-ow-dark-blue, 1), rgba($color-ow-light-blue, .6));
+    margin-bottom: 5rem;
+
+    &__text {
+        position: absolute;
+        text-align: center;
+        font-size: 10rem;
+        top: 10rem;
+        left: 50vw;
+        transform: translate(-50%,-50%);
+        border: 1px solid black;
+    }
+}
+
+
+.btn {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+
+    &--login {
+    }
+
+    &--logout{
+
+    }
+}
+

@@ -6,10 +6,10 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const routes = require('./routes/api.js')
 
-mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/overwatch_sr_tracker").then(() => {
-  console.log('connected')
-})
+// mongoose.Promise = Promise;
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/overwatch_sr_tracker").then(() => {
+//   console.log('connected')
+// })
 
 
 app.use(logger("dev"));

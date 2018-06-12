@@ -12,9 +12,37 @@ body {
   box-sizing: border-box;
   font-size: 1.7rem; }
 
+h1 {
+  font-size: 2rem;
+  text-decoration: underline;
+  font-variant: small-caps; }
+
 .btn {
   width: 10rem;
   height: 4rem;
+  border: 1px solid black; }
+
+.header {
+  border: 1px solid black;
+  height: 25vh;
+  position: relative;
+  background-image: linear-gradient(to bottom right, #405275, rgba(33, 143, 254, 0.6));
+  margin-bottom: 5rem; }
+  .header__text {
+    position: absolute;
+    text-align: center;
+    font-size: 10rem;
+    top: 10rem;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    border: 1px solid black; }
+
+.btn {
+  border: 1px solid black;
+  position: absolute;
+  bottom: 0; }
+
+.container {
   border: 1px solid black; }
 
 .app-header {

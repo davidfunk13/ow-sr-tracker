@@ -2,7 +2,9 @@ const db = require('../models');
 
 
 module.exports = {
-    saveGame: () => {
-        
-    }
+    //dev
+    // getAll: () => {
+    //     .get
+    // }
+
 }
