@@ -7,7 +7,6 @@ import Auth from './Auth';
 
 const auth = new Auth();
 
-
 let state = {};
 window.setState = (changes) => {
     state = Object.assign({}, state, changes)
@@ -15,12 +14,15 @@ window.setState = (changes) => {
 }
 
 /* eslint no-restricted-globals: 0*/
-let username = auth.getProfile().nickname || "Anon User"
+
+let getUserProfile = auth.getProfile();
+
 
 let initialState = {
-    name: username,
+    user: getUserProfile,
     location: location.pathname.replace(/^\/?|\/$/g, ""),
-    auth
+    auth,
+
 }
 
 window.setState(initialState);
