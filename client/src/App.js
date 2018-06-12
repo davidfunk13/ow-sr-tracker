@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Main from "./Components/Main/Main";
-import Secret from "./Components/Secret/Secret";
+import Menu from "./Pages/Menu/Menu";
 import NotFound from "./Components/NotFound/NotFound";
 import Callback from './Components/Callback/Callback';
 import Header from './Components/Header/Header';
@@ -16,8 +16,8 @@ class App extends Component {
       case "callback":
         mainComponent = <Callback />
         break;
-      case "secret":
-        mainComponent = this.props.auth.isAuthenticated() ? < Secret {...this.props} /> : <NotFound />;
+      case "menu":
+        mainComponent = this.props.auth.isAuthenticated() ? < Menu {...this.props} /> : <NotFound />;
         break;
       default:
         mainComponent = <NotFound />;

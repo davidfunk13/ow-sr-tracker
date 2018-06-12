@@ -1,5 +1,8 @@
 .btn{
-width: 10rem;
+width: auto;
+padding-left: 1rem;
+padding-right: 1rem;
+font-size: $default-font-size;
 height: 4rem;
 border: 1px solid black;
 }
