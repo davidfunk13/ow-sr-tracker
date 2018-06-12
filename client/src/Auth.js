@@ -56,7 +56,12 @@ export default class Auth {
         console.log(localStorage.getItem("id_token"));
         return jwtDecode(localStorage.getItem("id_token"));
     } else {
-        return {}
+        return {
+          name: 'Anon',
+          nickname: 'Anon',
+          picture: 'placeholder',
+          uid: null,
+        }
     }
   }
 }

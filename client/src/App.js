@@ -5,6 +5,7 @@ import Menu from "./Pages/Menu/Menu";
 import NotFound from "./Components/NotFound/NotFound";
 import Callback from './Components/Callback/Callback';
 import Header from './Components/Header/Header';
+import NewSeason from './Pages/NewSeason/NewSeason';
 
 class App extends Component {
   render() {
@@ -19,12 +20,16 @@ class App extends Component {
       case "menu":
         mainComponent = this.props.auth.isAuthenticated() ? < Menu {...this.props} /> : <NotFound />;
         break;
+        case "newseason":
+        mainComponent = this.props.auth.isAuthenticated() ? <NewSeason {...this.props}/> : <NotFound/>;
+        break;
       default:
         mainComponent = <NotFound />;
     }
 
     return (
       <div className="app">
+
         <Header {...this.props} />
         {mainComponent}
       </div>
