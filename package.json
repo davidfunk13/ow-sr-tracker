@@ -19,10 +19,13 @@
   },
   "homepage": "https://github.com/davidfunk13/ow-sr-tracker#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "concurrently": "^3.5.1",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "mongoose": "^5.1.5"
   },
   "devDependencies": {
+    "morgan": "^1.9.0",
     "nodemon": "^1.17.5"
   }
 }

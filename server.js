@@ -1,7 +1,21 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
+const logger = require("morgan");
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+const routes = require('./routes/api.js')
 
+mongoose.Promise = Promise;
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/overwatch_sr_tracker").then(() => {
+  console.log('connected')
+})
+
+
+app.use(logger("dev"));
+// app.use(routes)
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static("client/build"));
 
 app.listen(PORT, err => {
