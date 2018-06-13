@@ -3,9 +3,11 @@ import ReactModal from 'react-modal';
 import NewSeasonStart from '../NewSeasonStart/NewSeasonStart'
 
 export default class Menu extends Component {
+
     componentWillMount() {
         ReactModal.setAppElement('body');
     }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -17,6 +19,7 @@ export default class Menu extends Component {
         console.log(this.state)
         console.log(this.props)
     }
+
     handleOpenModal() {
         this.setState({ showModal: true });
     }
@@ -31,14 +34,20 @@ export default class Menu extends Component {
                 <ReactModal
                     isOpen={this.state.showModal}
                 >
-                <NewSeasonStart {...this.props}/>
-                <button onClick={this.handleCloseModal}>close modal</button>
+                    <NewSeasonStart {...this.props} />
+                    <button onClick={this.handleCloseModal}>close modal</button>
                 </ReactModal>
                 <h1>menu</h1>
-                <p>Hello, {this.props.user.nickname}</p>
-                <h1>start a new season</h1>
-                <button onClick={this.handleOpenModal}>Create a New Season</button>
-                <h1>your saved seasons</h1>
+                {!this.state.owSrTrackInfo.infoSaved ?
+                    <div>
+                        <h1>start tracking a new season</h1>
+                        <p>{this.props.user.nickname}, We need some information before we can start tracking your progress!</p>
+                        <p>Click Start to answer a few questions.</p>
+                    </div>
+                    :
+                    <div>
+                        We have a record of you. Start recording a new season anyway?
+                    </div>}
             </div>
         )
     }
