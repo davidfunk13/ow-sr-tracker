@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
-import NewSeason from '../NewSeason/NewSeason'
+import NewSeasonStart from '../NewSeasonStart/NewSeasonStart'
 
 export default class Menu extends Component {
     componentWillMount() {
@@ -31,15 +31,13 @@ export default class Menu extends Component {
                 <ReactModal
                     isOpen={this.state.showModal}
                 >
-                <NewSeason {...this.props}/>
+                <NewSeasonStart {...this.props}/>
                 <button onClick={this.handleCloseModal}>close modal</button>
                 </ReactModal>
-                <button onClick={this.handleOpenModal}>open modal</button>
                 <h1>menu</h1>
                 <p>Hello, {this.props.user.nickname}</p>
                 <h1>start a new season</h1>
-                <a href="/newseason"><p>click here to start a new season</p></a>
-
+                <button onClick={this.handleOpenModal}>Create a New Season</button>
                 <h1>your saved seasons</h1>
             </div>
         )
