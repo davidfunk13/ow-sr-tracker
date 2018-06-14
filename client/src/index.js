@@ -30,7 +30,6 @@ let initialState = {
     user: getUserProfile,
     location: location.pathname.replace(/^\/?|\/$/g, ""),
     auth,
-
 }
 
 window.setState(initialState);

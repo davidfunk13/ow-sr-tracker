@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
-import NewSeasonStart from '../NewSeasonStart/NewSeasonStart'
+import AddAccount from '../../Components/AddAccount/AddAccount';
 
 export default class Menu extends Component {
 
@@ -34,15 +34,16 @@ export default class Menu extends Component {
                 <ReactModal
                     isOpen={this.state.showModal}
                 >
-                    <NewSeasonStart {...this.props} />
                     <button onClick={this.handleCloseModal}>close modal</button>
                 </ReactModal>
-                <h1>menu</h1>
                 {!this.state.owSrTrackInfo.infoSaved ?
                     <div>
-                        <h1>start tracking a new season</h1>
-                        <p>{this.props.user.nickname}, We need some information before we can start tracking your progress!</p>
-                        <p>Click Start to answer a few questions.</p>
+                        <h1>thanks for loggin in, {this.props.user.nickname}!</h1>
+                        <p>It doesn't look like you have any stats with us, lets get you set up!</p>
+                        <div className="battlenet-account-form">
+                        <button onClick={this.handleOpenModal}>Open</button>
+                        <AddAccount {...this.props}/>
+                        </div>
                     </div>
                     :
                     <div>
