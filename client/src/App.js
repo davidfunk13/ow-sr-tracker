@@ -5,6 +5,9 @@ import Menu from "./Pages/Menu/Menu";
 import NotFound from "./Components/NotFound/NotFound";
 import Callback from './Components/Callback/Callback';
 import Header from './Components/Header/Header';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as userActionCreators from './actions/userActions';
 
 class App extends Component {
   render() {
@@ -17,12 +20,12 @@ class App extends Component {
         mainComponent = <Callback />
         break;
       case "menu":
-        mainComponent = this.props.auth.isAuthenticated() ? < Menu {...this.props} /> : <NotFound />;
+        mainComponent =  < Menu {...this.props} />
         break;
       default:
         mainComponent = <NotFound />;
     }
-
+    console.log(this.props)
     return (
       <div className="app">
 
@@ -33,4 +36,15 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    userActions: bindActionCreators(userActionCreators, dispatch),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
