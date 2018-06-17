@@ -1,15 +1,22 @@
 // import Auth from '../Auth';
 import actionTypes from './actionTypes';
 
-export const loginSuccess = () => {
-
+export function login() {
     return {
         type: actionTypes.LOGIN_SUCCESS,
-        // profile
     }
 }
-export function login() {
-    return function (dispatch) {
-        return dispatch(loginSuccess());
+
+export const loginSuccess = userData => {
+    return {
+        type: actionTypes.LOGIN_SUCCESS,
+        payload: {
+            userData
+        }
+    }
+}
+export const isAuthenticatedCheck = () => {
+    return {
+        type: actionTypes.IS_AUTHENTICATED,
     }
 }

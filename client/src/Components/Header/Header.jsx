@@ -8,11 +8,11 @@ class Header extends Component {
         return (
             <header className="header">
                 <h1 className='header__text'>SR TRACKER</h1>
-                {/* {this.props.auth.isAuthenticated() ?
-                    <button className='btn btn--logout' onClick={() => this.props.userActions.logout()}>Logout</button>
-                    : */}
-                <button className='btn btn--login' onClick={() => this.props.userActions.login()}>Login or Sign Up</button>
-                {/* } */}
+                {this.props.user.isAuthenticated ?
+                    <button className='btn btn--logout' onClick={() => this.props.user.logout()}>Logout</button>
+                    :
+                    <button className='btn btn--login' onClick={() => this.props.userActions.login()}>Login or Sign Up</button>
+                }
             </header>
         )
     }
