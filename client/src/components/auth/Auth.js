@@ -2,13 +2,13 @@
 import auth0 from "auth0-js";
 import jwtDecode from 'jwt-decode';
 
-const LOGIN_SUCCESS_PAGE = '/menu';
-const LOGIN_FAILURE_PAGE = '/';
+// const LOGIN_SUCCESS_PAGE = '/menu';
+// const LOGIN_FAILURE_PAGE = '/';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: "daves-auth-server.auth0.com",
-    clientID: "N4B28JxvZLVBVolk6BdpZPFJCAhmdUKe",
+    clientID: "4yu9jiQBMHopIqZ5nRG9DpJIkSb9R5ZH",
     redirectUri: "http://localhost:3000/callback",
     audience: "https://daves-auth-server.auth0.com/userinfo",
     responseType: "token id_token",
