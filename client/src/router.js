@@ -4,6 +4,10 @@ import Callback from './Components/Callback/Callback';
 import Auth from './Components/Auth/Auth';
 import history from './Components/Auth/history';
 import App from './App';
+import Menu from './Pages/Menu/Menu';
+import Header from './Components/Header/Header'
+import Main from './Components/Main/Main';
+import NotFound from './Components/NotFound/NotFound';
 
 const auth = new Auth();
 
@@ -17,12 +21,26 @@ export const makeMainRoutes = () => {
 
   return (
     <Router history={history}>
-        <div>
-          <Route exact path="/" render={(props) => <App auth={auth} {...props} />} />
-          <Route path="/callback" render={(props) => {
-            // handleAuthentication(props)
-            return <Callback auth={auth} {...props} />}} />
-        {/* <Footer/> */}
+      <div>
+        <Route exact path="/" render={(props) =>
+          auth.isAuthenticated() ?
+            <div>
+              <Header auth={auth} {...props} />
+              <Main auth={auth} {...props} />
+            </div>
+            :
+            <div>
+              <Header auth={auth} {...props} />
+              <NotFound />
+            </div>}
+        />
+        <Route path="/callback" render={(props) => {
+          // handleAuthentication(props)
+          return <Callback auth={auth} {...props} />
+        }}
+        />
+        <Route exact path='/menu' render={(props) =>
+          auth.isAuthenticated() ? <Menu auth={auth} {...props} /> : <NotFound />} />
       </div>
     </Router>
   );

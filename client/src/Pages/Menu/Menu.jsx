@@ -36,9 +36,9 @@ export default class Menu extends Component {
                 >
                     <button onClick={this.handleCloseModal}>close modal</button>
                 </ReactModal>
-                {!this.state.owSrTrackInfo.infoSaved ?
+                {/* {!this.state.owSrTrackInfo.infoSaved ? */}
                     <div>
-                        <h1>thanks for loggin in, {this.props.user.nickname}!</h1>
+                        <h1>thanks for loggin in, USER HERE</h1>
                         <p>It doesn't look like you have any stats with us, lets get you set up!</p>
                         <div className="battlenet-account-form">
                         <button onClick={this.handleOpenModal}>Open</button>
@@ -48,7 +48,8 @@ export default class Menu extends Component {
                     :
                     <div>
                         We have a record of you. Start recording a new season anyway?
-                    </div>}
+                    </div>
+                    {/* } */}
             </div>
         )
     }

@@ -20,8 +20,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Header auth={this.props.auth} {...this.props} />
-        <Main auth={this.props.auth}/>
+        {/* <Main auth={this.props.auth}/> */}
         {/* {mainComponent} */}
       </div>
     );

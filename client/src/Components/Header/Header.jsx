@@ -5,7 +5,7 @@ import * as userActionCreators from '../../actions/userActions';
 
 class Header extends Component {
     componentDidMount() {
-        console.log(this.props.auth.isAuthenticated())
+        this.props.auth.isAuthenticated()
         console.log(this.props.auth)
         console.log(this.props.auth.getProfile());
     }

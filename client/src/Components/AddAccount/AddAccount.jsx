@@ -29,7 +29,7 @@ export default class AddAccount extends Component {
     render() {
         return (
             <div className="question-container">
-                <p>{this.state.user.nickname}</p>
+                {/* <p>{this.state.user.nickname}</p> */}
                 <p>Step: {this.state.step}</p>
                 <div>
                     {this.handleQuestions()}

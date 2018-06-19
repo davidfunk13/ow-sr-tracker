@@ -5,11 +5,11 @@ export default class Tag extends Component {
         return (
             <div>
                 <p>
-                    Hello {this.props.user.nickname}
+                    {/* Hello {this.props.user.nickname} */}
                 </p>
                 <form className="form">
                     <input
-                        value={this.props.battleTag}
+                        // value={this.props.battleTag}
                         name="tag"
                         onChange={this.handleInputChange}
                         type="text"
