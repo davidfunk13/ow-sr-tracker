@@ -6,21 +6,19 @@ import registerServiceWorker from './registerServiceWorker';
 // import Auth from './Auth';
 import { Provider } from 'react-redux';
 import configureStore from './store';
-import { BrowserRouter } from 'react-router-dom';
+import { makeMainRoutes } from './router';
 
 // const auth = new Auth();
 const store = configureStore();
-
+const router = makeMainRoutes();
 // let state = {};
 // window.setState = (changes) => {
-    // state = Object.assign({}, state, changes)
-    ReactDOM.render(
-        <Provider store={store}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-            </Provider>,
-        document.getElementById('root'));
+// state = Object.assign({}, state, changes)
+ReactDOM.render(
+    <Provider store={store}>
+        {router}
+    </Provider>,
+    document.getElementById('root'));
 // }
 
 /* eslint no-restricted-globals: 0*/
@@ -28,13 +26,13 @@ const store = configureStore();
 // let getUserProfile = auth.getProfile();
 
 // let initialState = {
-    // owSrTrackInfo: {
-        // infoSaved: false,
-        // accounts: [],
-    // },
-    // user: getUserProfile,
-    // location: location.pathname.replace(/^\/?|\/$/g, ""),
-    // auth,
+// owSrTrackInfo: {
+// infoSaved: false,
+// accounts: [],
+// },
+// user: getUserProfile,
+// location: location.pathname.replace(/^\/?|\/$/g, ""),
+// auth,
 // }
 // console.log(store)
 // window.setState(initialState);

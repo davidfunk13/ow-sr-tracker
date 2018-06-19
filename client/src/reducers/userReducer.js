@@ -1,46 +1,12 @@
-import Auth from '../Auth';
+import Auth from '../Components/Auth/Auth';
 import actionTypes from '../actions/actionTypes';
-// import initialState from './initialState';
-
-const auth = new Auth();
+import initialState from './initialState';
 
 const userReducer = (
-    state = {
-      isAuthenticated: auth.isAuthenticated(),
-      isFetching: false,
-      profile: auth.getProfile(),
-      error: null
-    },
+    state = initialState.user,
     action
   ) => {
     switch (action.type) {
-      case actionTypes.LOGIN:
-        return {
-          ...state,
-          isFetching: true,
-          error: null
-        };
-      case actionTypes.LOGIN_SUCCESS:
-        return {
-          ...state,
-          isFetching: false,
-          isAuthenticated: true,
-          profile: action.payload.profile
-        };
-      case actionTypes.LOGIN_FAILURE:
-        return {
-          ...state,
-          isFetching: false,
-          isAuthenticated: false,
-          profile: {},
-          error: action.error
-        };
-      case actionTypes.LOGOUT_SUCCESS:
-        return {
-          ...state,
-          isAuthenticated: false,
-          profile: {}
-        };
       default:
         return state;
     }

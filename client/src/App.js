@@ -8,29 +8,21 @@ import Header from './Components/Header/Header';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as userActionCreators from './actions/userActions';
+import { Route, Router } from 'react-router-dom';
 
 class App extends Component {
+  componentDidMount(){
+    // console.log(this.props.auth)
+  }
+  componentDidUpdate(){
+    console.log(this.props.auth.getProfile());
+  }
   render() {
-    let mainComponent = "";
-    switch (this.props.location) {
-      case "":
-        mainComponent = <Main {...this.props} />;
-        break;
-      case "callback":
-        mainComponent = <Callback />
-        break;
-      case "menu":
-        mainComponent =  < Menu {...this.props} />
-        break;
-      default:
-        mainComponent = <NotFound />;
-    }
-    console.log(this.props)
     return (
-      <div className="app">
-
-        <Header {...this.props} />
-        {mainComponent}
+      <div>
+        <Header auth={this.props.auth} {...this.props} />
+        <Main auth={this.props.auth}/>
+        {/* {mainComponent} */}
       </div>
     );
   }

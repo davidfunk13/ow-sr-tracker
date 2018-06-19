@@ -4,14 +4,19 @@ import { bindActionCreators } from 'redux';
 import * as userActionCreators from '../../actions/userActions';
 
 class Header extends Component {
+    componentDidMount() {
+        console.log(this.props.auth.isAuthenticated())
+        console.log(this.props.auth)
+        console.log(this.props.auth.getProfile());
+    }
     render() {
         return (
             <header className="header">
                 <h1 className='header__text'>SR TRACKER</h1>
-                {this.props.user.isAuthenticated ?
-                    <button className='btn btn--logout' onClick={() => this.props.user.logout()}>Logout</button>
+                {this.props.auth.isAuthenticated() ?
+                    <button className='btn btn--logout' onClick={() => this.props.auth.logout()}>Logout</button>
                     :
-                    <button className='btn btn--login' onClick={() => this.props.userActions.login()}>Login or Sign Up</button>
+                    <button className='btn btn--logout' onClick={() => this.props.auth.login()}>Login or Signup!</button>
                 }
             </header>
         )
@@ -20,12 +25,12 @@ class Header extends Component {
 
 function mapStateToProps(state) {
     return {
-        user: state.user,
+        // user: state.user,
     };
 }
 function mapDispatchToProps(dispatch) {
     return {
-        userActions: bindActionCreators(userActionCreators, dispatch),
+        // userActions: bindActionCreators(userActionCreators, dispatch),
     };
 }
 
