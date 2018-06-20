@@ -1,10 +1,4 @@
 const actions = {
-    LOGIN: 'LOGIN',
-    LOGIN_SUCCESS: 'LOGIN_SUCCESS',
-    LOGIN_FAILURE: 'LOGIN_FAILURE',
-    IS_AUTHENTICATED: 'IS_AUTHENTICATED',
-    LOGOUT: 'LOGOUT ',
-    LOGOUT_SUCCESS: 'LOGOUT_SUCCESS'
+    
 }
-
 export default actions;

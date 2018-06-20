@@ -3,7 +3,6 @@ import { Route, Router } from 'react-router-dom';
 import Callback from './Components/Callback/Callback';
 import Auth from './Components/Auth/Auth';
 import history from './Components/Auth/history';
-import App from './App';
 import Menu from './Pages/Menu/Menu';
 import Header from './Components/Header/Header'
 import Main from './Components/Main/Main';
@@ -40,7 +39,18 @@ export const makeMainRoutes = () => {
         }}
         />
         <Route exact path='/menu' render={(props) =>
-          auth.isAuthenticated() ? <Menu auth={auth} {...props} /> : <NotFound />} />
+          auth.isAuthenticated() ?
+            <div>
+              <Header auth={auth} {...props} />
+              <Menu auth={auth} {...props} />
+            </div>
+            :
+            <div>
+              <Header auth={auth} {...props} />
+              <NotFound />
+            </div>
+        }
+        />
       </div>
     </Router>
   );

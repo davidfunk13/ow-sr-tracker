@@ -7,6 +7,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import configureStore from './store';
 import { makeMainRoutes } from './router';
+// import Auth from './Components/Auth/Auth';
+// import Header from './Components/Header/Header'
 
 // const auth = new Auth();
 const store = configureStore();
@@ -16,6 +18,7 @@ const router = makeMainRoutes();
 // state = Object.assign({}, state, changes)
 ReactDOM.render(
     <Provider store={store}>
+        {/* <Header auth={auth} /> */}
         {router}
     </Provider>,
     document.getElementById('root'));

@@ -9,6 +9,9 @@ class Header extends Component {
         console.log(this.props.auth)
         console.log(this.props.auth.getProfile());
     }
+    // componentWillUpdate(){
+    //     this.props.auth.isAuthenticated()
+    // }
     render() {
         return (
             <header className="header">
