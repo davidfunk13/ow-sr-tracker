@@ -24,12 +24,12 @@ export const makeMainRoutes = () => {
         <Route exact path="/" render={(props) =>
           auth.isAuthenticated() ?
             <div>
-              <Header auth={auth} {...props} />
-              <Main auth={auth} {...props} />
+              <Header profile={auth.getProfile()} auth={auth} {...props} />
+              <Main profile={auth.getProfile()} auth={auth} {...props} />
             </div>
             :
             <div>
-              <Header auth={auth} {...props} />
+              <Header profile={auth.getProfile()} auth={auth} {...props} />
               <NotFound />
             </div>}
         />
@@ -41,12 +41,12 @@ export const makeMainRoutes = () => {
         <Route exact path='/menu' render={(props) =>
           auth.isAuthenticated() ?
             <div>
-              <Header auth={auth} {...props} />
-              <Menu auth={auth} {...props} />
+              <Header profile={auth.getProfile()} auth={auth} {...props} />
+              <Menu profile={auth.getProfile()} auth={auth} {...props} />
             </div>
             :
             <div>
-              <Header auth={auth} {...props} />
+              <Header profile={auth.getProfile()} auth={auth} {...props} />
               <NotFound />
             </div>
         }

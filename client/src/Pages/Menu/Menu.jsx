@@ -6,6 +6,7 @@ export default class Menu extends Component {
 
     componentWillMount() {
         ReactModal.setAppElement('body');
+        console.log(this.props)
     }
 
     constructor(props) {
@@ -38,7 +39,7 @@ export default class Menu extends Component {
                 </ReactModal>
                 {/* {!this.state.owSrTrackInfo.infoSaved ? */}
                     <div>
-                        <h1>thanks for loggin in, USER HERE</h1>
+                        <h1>thanks for loggin in, {this.props.profile.nickname}</h1>
                         <p>It doesn't look like you have any stats with us, lets get you set up!</p>
                         <div className="battlenet-account-form">
                         <button onClick={this.handleOpenModal}>Open</button>
