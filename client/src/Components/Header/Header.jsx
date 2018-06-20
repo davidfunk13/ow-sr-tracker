@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as userActionCreators from '../../actions/userActions';
+import * as modalActionCreators from '../../actions/modalActions';
 
 class Header extends Component {
     componentDidMount() {
@@ -26,15 +26,5 @@ class Header extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        // user: state.user,
-    };
-}
-function mapDispatchToProps(dispatch) {
-    return {
-        // userActions: bindActionCreators(userActionCreators, dispatch),
-    };
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default (Header);

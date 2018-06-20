@@ -1,9 +1,8 @@
 import { combineReducers } from 'redux';
-import user from './userReducer';
+import modal from './modalReducer';
 
 const rootReducer = combineReducers({
-  user,
+  modal,
 });
-console.log()
 
 export default rootReducer;

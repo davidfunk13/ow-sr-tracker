@@ -7,7 +7,7 @@ import Callback from './Components/Callback/Callback';
 import Header from './Components/Header/Header';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as userActionCreators from './actions/userActions';
+// import * as userActionCreators from './actions/userActions';
 import { Route, Router } from 'react-router-dom';
 
 class App extends Component {
@@ -27,15 +27,15 @@ class App extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    user: state.user,
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return {
-    userActions: bindActionCreators(userActionCreators, dispatch),
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     user: state.user,
+//   };
+// }
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     userActions: bindActionCreators(userActionCreators, dispatch),
+//   };
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
