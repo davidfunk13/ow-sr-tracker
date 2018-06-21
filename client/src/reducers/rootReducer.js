@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import modal from './modalReducer';
+import showModal from './modalReducer';
 
 const rootReducer = combineReducers({
-  modal,
+  showModal,
 });
 
 export default rootReducer;

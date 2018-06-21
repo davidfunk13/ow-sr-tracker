@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as modalActionCreators from '../../actions/modalActions';
+
 
 class Header extends Component {
     componentDidMount() {
         this.props.auth.isAuthenticated()
-        console.log(this.props.auth)
-        console.log(this.props.auth.getProfile());
+        // console.log(this.props.auth)
+        // console.log(this.props.auth.getProfile());
     }
     // componentWillUpdate(){
     //     this.props.auth.isAuthenticated()

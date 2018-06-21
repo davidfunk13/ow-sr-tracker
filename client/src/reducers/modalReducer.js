@@ -4,14 +4,9 @@ import initialState from './initialState';
 export default function modalReducer(state = initialState.showModal, action) {
   switch (action.type) {
     case actionTypes.OPEN_MODAL:
-      {
-        return action.type;
-      }
+    return true
     case actionTypes.CLOSE_MODAL:
-      {
-        return action.type;
-      }
-
+    return  false
     default:
       {
         return state;
