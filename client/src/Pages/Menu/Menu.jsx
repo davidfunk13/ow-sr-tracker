@@ -4,6 +4,7 @@ import AddAccount from '../../Components/AddAccount/AddAccount';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../actions/modalActions';
+import * as accountsSavedFormActionCreators from '../../actions/accountsSavedActions';
 
 class Menu extends Component {
 
@@ -21,13 +22,13 @@ class Menu extends Component {
                 <ReactModal
                     isOpen={this.props.showModal}
                 >
-                    <button onClick={() => this.props.modal.closeModal()}>close modal</button>
+                    <button onClick={() => this.props.modalActions.closeModal()}>close modal</button>
                 </ReactModal>
                 <div>
                     <h1>thanks for logging in, {this.props.profile.nickname}</h1>
-                    <p>It doesn't look like you have any stats with us, lets get you set up!</p>
+                    <button onClick={() => this.props.accountsSavedFormActions.signupStep()}>steptest</button>
                     <div className="battlenet-account-form">
-                        <button onClick={() => this.props.modal.openModal()}>Open</button>
+                        <button onClick={() => this.props.modalActions.openModal()}>Open</button>
                         <AddAccount {...this.props} />
                     </div>
                 </div>
@@ -47,13 +48,15 @@ class Menu extends Component {
 // }
 function mapStateToProps(state) {
     return {
-        showModal: state.showModal
+        showModal: state.showModal,
+        accountsSavedForm: state.accountsSavedForm,
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        modal: bindActionCreators(modalActionCreators, dispatch),
+        modalActions: bindActionCreators(modalActionCreators, dispatch),
+        accountsSavedFormActions: bindActionCreators(accountsSavedFormActionCreators, dispatch),
     }
 }
 

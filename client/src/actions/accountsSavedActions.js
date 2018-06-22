@@ -2,12 +2,6 @@ import actionTypes from './actionTypes';
 
 export function signupStep() {
     return {
-        type: actionTypes.OPEN_MODAL,
-    }
-}
-
-export function closeModal() {
-    return {
-        type: actionTypes.CLOSE_MODAL,
+        type: actionTypes.ACCOUNTS_SAVED_FORM_NEXT_STEP,
     }
 }
