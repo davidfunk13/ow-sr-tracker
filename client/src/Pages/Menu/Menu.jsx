@@ -6,6 +6,18 @@ import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../actions/accountsSavedActions';
 
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)',
+      border: '1px solid black',
+    }
+  };
+
 class Menu extends Component {
 
     componentWillMount() {
@@ -35,15 +47,16 @@ class Menu extends Component {
             <div className="container">
                 <ReactModal
                     isOpen={this.props.showModal}
+                    style={customStyles}
                 >
+                    {accountsSavedForm}
                     <button onClick={() => this.props.modalActions.closeModal()}>close modal</button>
+                    <button onClick={() => this.props.accountsSavedFormActions.signupStep()}>steptest</button>
                 </ReactModal>
                 <div>
                     <h1>thanks for logging in, {this.props.profile.nickname}</h1>
-                    <button onClick={() => this.props.accountsSavedFormActions.signupStep()}>steptest</button>
-                    {accountsSavedForm}
-                    <div className="battlenet-account-form">
                     
+                    <div className="battlenet-account-form">
                         <button onClick={() => this.props.modalActions.openModal()}>Open</button>
                     </div>
                 </div>
