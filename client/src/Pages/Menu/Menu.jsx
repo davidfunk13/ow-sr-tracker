@@ -12,11 +12,25 @@ class Menu extends Component {
         ReactModal.setAppElement('body');
         console.log(this.props)
     }
-    componentDidUpdate(){
+    componentDidUpdate() {
         console.log(this.props)
     }
 
     render() {
+        let accountsSavedForm
+        switch (this.props.accountsSavedForm.step) {
+            case 1:
+                 accountsSavedForm = <AddAccount {...this.props} />
+                 break;
+            case 2:
+                 accountsSavedForm = <div>Step2</div>
+                 break;
+            case 3:
+                 accountsSavedForm = <div>Step3</div>
+                 break;
+            default:
+                break;
+        }
         return (
             <div className="container">
                 <ReactModal
@@ -27,9 +41,10 @@ class Menu extends Component {
                 <div>
                     <h1>thanks for logging in, {this.props.profile.nickname}</h1>
                     <button onClick={() => this.props.accountsSavedFormActions.signupStep()}>steptest</button>
+                    {accountsSavedForm}
                     <div className="battlenet-account-form">
+                    
                         <button onClick={() => this.props.modalActions.openModal()}>Open</button>
-                        <AddAccount {...this.props} />
                     </div>
                 </div>
             </div>
