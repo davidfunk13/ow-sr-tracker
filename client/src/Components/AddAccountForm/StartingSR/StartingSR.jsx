@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../../actions/accountsSavedActions';   
-class BattleTag extends Component {
+class StartingSR extends Component {
     state = {
-        BattleTag: "",
+        StartingSR: "",
       };
     
       handleInputChange = event => {
@@ -14,15 +14,15 @@ class BattleTag extends Component {
           this.setState({
               [name]: value
           });
-          console.log(`BattleTag input: ${this.state.BattleTag}`)
+          console.log(`BattleTag input: ${this.state.StartingSR}`)
       };
 
       handleFormSubmit = event => {
           event.preventDefault();
-          let BattleTag = this.state.BattleTag;
-          this.props.accountsSavedFormActions.saveBattleTag(BattleTag)
+          let StartingSR = this.state.StartingSR;
+          this.props.accountsSavedFormActions.saveStartingSR(StartingSR)
           this.props.accountsSavedFormActions.signupStep()
-          console.log(this.state.BattleTag)
+          console.log(this.state.StartingSR)
       }
 
 
@@ -34,11 +34,11 @@ class BattleTag extends Component {
                 </p>
                 <form className="form">
                     <input
-                        value={this.state.BattleTag}
-                        name="BattleTag"
+                        value={this.state.StartingSR}
+                        name="StartingSR"
                         onChange={this.handleInputChange}
                         type="text"
-                        placeholder="Battletag"
+                        placeholder="StartingSR"
                     />
                     <button onClick={this.handleFormSubmit}>Submit</button>
                 </form>
@@ -60,4 +60,4 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BattleTag)
+export default connect(mapStateToProps, mapDispatchToProps)(StartingSR)

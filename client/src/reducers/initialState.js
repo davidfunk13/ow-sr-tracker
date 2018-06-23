@@ -4,12 +4,13 @@ export default {
   showModal: false,
   accountsSavedForm: {
     step: 1,
-    accountsSaved: {
-      1: {
+    accountsSaved: [
+      {
+        id: 1,
         BattleTag: "",
-        startingSR: "",
-        herosFocused: [],
-      }
-  }
+        StartingSR: "",
+        HerosFocused: [],
+    }
+  ]
   }
 };

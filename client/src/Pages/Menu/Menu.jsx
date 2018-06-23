@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../actions/accountsSavedActions';
+import StartingSR from '../../Components/AddAccountForm/StartingSR/StartingSR';
 
 const customStyles = {
     content : {
@@ -35,7 +36,7 @@ class Menu extends Component {
                  accountsSavedForm = <BattleTag {...this.props} />
                  break;
             case 2:
-                 accountsSavedForm = <div>Step2</div>
+                 accountsSavedForm = <StartingSR {...this.props} />
                  break;
             case 3:
                  accountsSavedForm = <div>Step3</div>
