@@ -6,7 +6,7 @@ export default {
     step: 1,
     accountsSaved: {
       1: {
-        battleTag: "",
+        BattleTag: "",
         startingSR: "",
         herosFocused: [],
       }

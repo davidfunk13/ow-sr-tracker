@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactModal from 'react-modal';
-import AddAccount from '../../Components/AddAccount/AddAccount';
+import BattleTag from '../../Components/AddAccountForm/BattleTag/BattleTag';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../actions/modalActions';
@@ -32,7 +32,7 @@ class Menu extends Component {
         let accountsSavedForm
         switch (this.props.accountsSavedForm.step) {
             case 1:
-                 accountsSavedForm = <AddAccount {...this.props} />
+                 accountsSavedForm = <BattleTag {...this.props} />
                  break;
             case 2:
                  accountsSavedForm = <div>Step2</div>

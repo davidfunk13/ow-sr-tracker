@@ -8,6 +8,17 @@ export default function accountsSavedReducer(state = initialState.accountsSavedF
       ...state,
       step: state.step + 1,
     }
+    case actionTypes.SAVE_BATTLETAG:
+      return {
+        ...state,
+        accountsSaved: {
+          1:{
+            BattleTag: action.BattleTag,
+            startingSr: "",
+            herosFocused: [],
+          }
+        }
+      }
     default:
       {
         return state;
