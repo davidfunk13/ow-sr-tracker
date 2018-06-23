@@ -28,12 +28,12 @@ class StartingSR extends Component {
 
     render() {
         return (
-            <div>
-                <p>
-                    Hello {this.props.profile.nickname}, 
-                </p>
-                <form className="form">
+            <div className='account-form'>
+
+                    <h1 className='u-margin-bottom-small'>Hello {this.props.profile.nickname}</h1>
+                <form className="account-form__form">
                     <input
+                        className='account-form__form--starting-sr'
                         value={this.state.StartingSR}
                         name="StartingSR"
                         onChange={this.handleInputChange}

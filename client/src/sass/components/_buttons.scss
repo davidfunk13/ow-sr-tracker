@@ -1,8 +1,27 @@
-.btn{
-width: auto;
-padding-left: 1rem;
-padding-right: 1rem;
-font-size: $default-font-size;
-height: 4rem;
-border: 1px solid black;
+.btn {
+    width: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: $default-font-size;
+    height: 4rem;
+    border: 1px solid black;
+
+    &--close-modal{
+        position: absolute;
+        bottom: 1rem;
+    }
+
+    &--login {
+        position: absolute;
+        bottom: 0;
+    }
+    &--logout {
+        position: absolute;
+        bottom: 0;
+    }
+    &--submit-form {
+        position: absolute;
+        height: 6rem;
+    }
+
 }

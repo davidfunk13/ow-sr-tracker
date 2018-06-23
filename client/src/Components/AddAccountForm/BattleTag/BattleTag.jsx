@@ -28,19 +28,19 @@ class BattleTag extends Component {
 
     render() {
         return (
-            <div>
-                <p>
-                    Hello {this.props.profile.nickname}, 
-                </p>
-                <form className="form">
+            <div className='account-form'>
+                    <h1 className='u-margin-bottom-small'>Hello {this.props.profile.nickname}, Please tell us your BattleTag.</h1>
+                <p>No account numbers are required, this is simply to put at the top of your spreadsheet in case you want to track another account.</p>
+                <form className="account-form__form">
                     <input
+                    className='account-form__form--BattleTag'
                         value={this.state.BattleTag}
                         name="BattleTag"
                         onChange={this.handleInputChange}
                         type="text"
                         placeholder="Battletag"
                     />
-                    <button onClick={this.handleFormSubmit}>Submit</button>
+                    <button className='btn btn--submit-form' onClick={this.handleFormSubmit}>Submit</button>
                 </form>
             </div>
         )

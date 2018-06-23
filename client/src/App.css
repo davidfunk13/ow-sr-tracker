@@ -27,6 +27,18 @@ h1 {
   font-size: 2rem;
   height: 4rem;
   border: 1px solid black; }
+  .btn--close-modal {
+    position: absolute;
+    bottom: 1rem; }
+  .btn--login {
+    position: absolute;
+    bottom: 0; }
+  .btn--logout {
+    position: absolute;
+    bottom: 0; }
+  .btn--submit-form {
+    position: absolute;
+    height: 6rem; }
 
 .header {
   border: 1px solid black;
@@ -43,15 +55,24 @@ h1 {
     transform: translate(-50%, -50%);
     border: 1px solid black; }
 
-.btn {
-  border: 1px solid black;
-  position: absolute;
-  bottom: 0; }
-
 .container {
   border: 1px solid black;
   margin: 2rem;
   padding: 2rem; }
+
+.account-form {
+  margin-top: 5rem;
+  text-align: center; }
+  .account-form__form {
+    text-align: center;
+    margin-top: 10rem; }
+    .account-form__form--starting-sr {
+      border: 1px solid black; }
+    .account-form__form--BattleTag {
+      position: relative;
+      font-size: 5rem;
+      width: 50rem;
+      border: 1px solid black; }
 
 .app-header {
   height: 20vh;

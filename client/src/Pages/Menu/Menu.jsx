@@ -8,16 +8,18 @@ import * as accountsSavedFormActionCreators from '../../actions/accountsSavedAct
 import StartingSR from '../../Components/AddAccountForm/StartingSR/StartingSR';
 
 const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)',
-      border: '1px solid black',
+    content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+        width: '60%',
+        height: '60%',
+        border: '1px solid black',
     }
-  };
+};
 
 class Menu extends Component {
 
@@ -33,14 +35,14 @@ class Menu extends Component {
         let accountsSavedForm
         switch (this.props.accountsSavedForm.step) {
             case 1:
-                 accountsSavedForm = <BattleTag {...this.props} />
-                 break;
+                accountsSavedForm = <BattleTag {...this.props} />
+                break;
             case 2:
-                 accountsSavedForm = <StartingSR {...this.props} />
-                 break;
+                accountsSavedForm = <StartingSR {...this.props} />
+                break;
             case 3:
-                 accountsSavedForm = <div>Step3</div>
-                 break;
+                accountsSavedForm = <div>Step3</div>
+                break;
             default:
                 break;
         }
@@ -51,14 +53,13 @@ class Menu extends Component {
                     style={customStyles}
                 >
                     {accountsSavedForm}
-                    <button onClick={() => this.props.modalActions.closeModal()}>close modal</button>
-                    <button onClick={() => this.props.accountsSavedFormActions.signupStep()}>steptest</button>
+                    <button className='btn btn--close-modal' onClick={() => this.props.modalActions.closeModal()}>close modal</button>
                 </ReactModal>
                 <div>
                     <h1>thanks for logging in, {this.props.profile.nickname}</h1>
-                    
+
                     <div className="battlenet-account-form">
-                        <button onClick={() => this.props.modalActions.openModal()}>Open</button>
+                        <button className='btn btn--open-modal' onClick={() => this.props.modalActions.openModal()}>Open</button>
                     </div>
                 </div>
             </div>

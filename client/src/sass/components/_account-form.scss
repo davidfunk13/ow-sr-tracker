@@ -1,0 +1,21 @@
+.account-form{
+    margin-top: 5rem;
+    text-align: center;
+    // border: 1px solid black;
+    // margin: 10rem;
+    &__form {
+        text-align: center;
+        margin-top: 10rem;
+        &--starting-sr{
+            
+            border: 1px solid black;
+        }
+        &--BattleTag{
+            position: relative;
+            font-size: 5rem;
+            width: 50rem;
+            border: 1px solid black;
+        }
+        // border: 1px solid black;
+    }
+}
