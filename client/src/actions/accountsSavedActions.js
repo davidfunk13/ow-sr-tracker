@@ -18,3 +18,9 @@ export const saveStartingSR = StartingSR => {
         StartingSR: StartingSR,
     }
 }
+export const saveHerosFocused = HerosFocused => {
+    return {
+        type: actionTypes.SAVE_HEROS_FOCUSED,
+        HerosFocused: HerosFocused,
+    }
+}

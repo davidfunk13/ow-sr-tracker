@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../actions/accountsSavedActions';
 import StartingSR from '../../Components/AddAccountForm/StartingSR/StartingSR';
+import HerosFocused from '../../Components/AddAccountForm/HerosFocused/HerosFocused';
 
 const customStyles = {
     content: {
@@ -41,7 +42,7 @@ class Menu extends Component {
                 accountsSavedForm = <StartingSR {...this.props} />
                 break;
             case 3:
-                accountsSavedForm = <div>Step3</div>
+                accountsSavedForm = <HerosFocused {...this.props} />
                 break;
             default:
                 break;

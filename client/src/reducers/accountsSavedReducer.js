@@ -1,36 +1,48 @@
 import actionTypes from '../actions/actionTypes';
 import initialState from './initialState';
+import HerosFocused from '../Components/AddAccountForm/HerosFocused/HerosFocused';
 export default function accountsSavedReducer(state = initialState.accountsSavedForm, action) {
 
   switch (action.type) {
     case actionTypes.ACCOUNTS_SAVED_FORM_NEXT_STEP:
-  return {
-    ...state,
-    step: state.step + 1,
-  }
+      return {
+        ...state,
+        step: state.step + 1,
+      }
     // update(state, {
-      //   step: {$set: state.step ++}
-      // })
+    //   step: {$set: state.step ++}
+    // })
 
     case actionTypes.SAVE_BATTLETAG:
     return {
       ...state,
-      accountsSaved: {
-        ...state.accountsSaved[0],
-        BattleTag: action.BattleTag
-      }
-    }
-
-    case actionTypes.SAVE_STARTING_SR:
-    return {
-      ...state,
-      accountsSaved: {
-        ...state.accountsSaved,
+      accountsSaved: [
+        {
           ...state.accountsSaved[0],
-          StartingSR: action.StartingSR
-      }
+          BattleTag: action.BattleTag
+        }
+      ]
     }
-
+    case actionTypes.SAVE_STARTING_SR:
+      return {
+        ...state,
+        accountsSaved: [
+          {
+            ...state.accountsSaved[0],
+            StartingSR: action.StartingSR
+          }
+        ]
+      }
+    case actionTypes.SAVE_HEROS_FOCUSED:
+      return {
+        ...state,
+        accountsSaved: [
+          {
+            ...state.accountsSaved[0],
+            HerosFocused: state.accountsSaved[0].HerosFocused.concat(action.HerosFocused)   
+          }
+        ]
+      }
     default:
       {
         return state;
