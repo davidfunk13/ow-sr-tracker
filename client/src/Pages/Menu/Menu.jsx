@@ -7,6 +7,7 @@ import * as modalActionCreators from '../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../actions/accountsSavedActions';
 import StartingSR from '../../Components/AddAccountForm/StartingSR/StartingSR';
 import HerosFocused from '../../Components/AddAccountForm/HerosFocused/HerosFocused';
+import Confirm from '../../Components/AddAccountForm/Confirm/Confirm'
 
 const customStyles = {
     content: {
@@ -44,6 +45,8 @@ class Menu extends Component {
             case 3:
                 accountsSavedForm = <HerosFocused {...this.props} />
                 break;
+                case 4: 
+                accountsSavedForm = <Confirm {...this.props} />
             default:
                 break;
         }
