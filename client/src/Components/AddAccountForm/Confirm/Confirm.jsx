@@ -3,12 +3,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../../actions/accountsSavedActions';
-import api from '../../../utils/api'
 class Confirm extends Component {
 
     render() {
         let HerosArr = this.props.accountsSavedForm.accountsSaved['0'].HerosFocused
-        let Account = {
+        let account = {
             BattleTag: this.props.accountsSavedForm.accountsSaved['0'].BattleTag,
             StartingSR: this.props.accountsSavedForm.accountsSaved['0'].StartingSR,
             HerosFocused: HerosArr,
@@ -17,10 +16,10 @@ class Confirm extends Component {
             <div className='account-form'>
                 <h1 className='u-margin-bottom-small'>{this.props.profile.nickname}, is this information correct?</h1>
                 <div className='account-info'>
-                    <h2>Battletag: {this.props.accountsSavedForm.accountsSaved['0'].BattleTag}</h2>
-                    <h2>Starting SR: {this.props.accountsSavedForm.accountsSaved['0'].StartingSR}</h2>
-                    <h2>Heros Focused this Season: {HerosArr.toString()}</h2>
-                    <button className='btn btn--save-info' onClick={() => api.saveAccount(Account)}>Save Info</button>
+                    <h2>Battletag: {account.BattleTag}</h2>
+                    <h2>Starting SR: {account.StartingSR}</h2>
+                    <h2>Heros Focused this Season: {account.HerosFocused.toString()}</h2>
+                    <button className='btn btn--save-info' onClick={() => this.props.accountsSavedFormActions.saveAccount(account)}>Save Info</button>
                 </div>
             </div>
         )

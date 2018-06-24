@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 3001;
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const routes = require('./routes/api.js')
 
 mongoose.Promise = Promise;
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/overwatch_sr_tracker").then(() => {
@@ -13,10 +12,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/overwatch_sr_tr
 
 
 app.use(logger("dev"));
-// app.use(routes)
+
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("client/build"));
+require("./routes/index.js")(app);
 
 app.listen(PORT, err => {
   if (err) {

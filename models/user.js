@@ -3,17 +3,19 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-    uid: {
+    BattleTag: {
         type: String,
         required: true,
     },
-    games: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Game"
-        }
-    ]
-});
+    StartingSR: {
+        type: Number,
+        required: true,
+    },
+    HerosFocused: {
+        type: Array,
+        required: true,
+    }
+}, {timestamps: Date});
 
 const User = mongoose.model('User', UserSchema);
 

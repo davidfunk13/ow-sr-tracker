@@ -25,22 +25,22 @@ export const saveHerosFocused = HerosFocused => {
         HerosFocused: HerosFocused,
     }
 }
-// export const saveAccount = Account => {
-//     return {
-//         type: actionTypes,
-//         Account: Account,
-//     }
-// }
+export const saveAccountSuccess = data => {
+    return {
+        type: actionTypes.SAVE_ACCOUNT_SUCCESS,
+        data: data
+    }
+}
 export const saveAccount = Account => {
     return function(dispatch) {
         console.log(Account)
-    //   axios
-    //     .post(`/api/saveseason/`, Account)
-    //     .then(data => {
-    //         console.log(data)
-    //     })
-    //     .catch(error => {
-    //       console.log(error);
-    //     });
+      axios
+        .post(`/api/saveseason/`, Account)
+        .then(data => {
+            dispatch(console.log(data))
+        })
+        .catch(error => {
+          console.log(error);
+        });
     };
   };

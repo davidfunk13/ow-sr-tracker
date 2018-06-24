@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/davidfunk13/ow-sr-tracker#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "concurrently": "^3.5.1",
     "express": "^4.16.3",

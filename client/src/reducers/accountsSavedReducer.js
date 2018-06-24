@@ -1,6 +1,7 @@
 import actionTypes from '../actions/actionTypes';
 import initialState from './initialState';
 import HerosFocused from '../Components/AddAccountForm/HerosFocused/HerosFocused';
+import actions from '../actions/actionTypes';
 export default function accountsSavedReducer(state = initialState.accountsSavedForm, action) {
 
   switch (action.type) {
@@ -43,8 +44,11 @@ export default function accountsSavedReducer(state = initialState.accountsSavedF
           }
         ]
       }
-      case actionTypes.SAVE_ACCOUNT:
-      return 
+      case actionTypes.SAVE_ACCOUNT_SUCCESS:
+      return {
+        ...state,
+        account: action.data,
+      }
     default:
       {
         return state;

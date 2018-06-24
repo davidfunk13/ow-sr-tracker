@@ -45,8 +45,9 @@ class Menu extends Component {
             case 3:
                 accountsSavedForm = <HerosFocused {...this.props} />
                 break;
-                case 4: 
+            case 4:
                 accountsSavedForm = <Confirm {...this.props} />
+                break;
             default:
                 break;
         }
