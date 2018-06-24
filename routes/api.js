@@ -1,28 +1,22 @@
-
 const path = require("path");
 const router = require("express").Router();
-const applicationController = require('../controllers/applicationController')
 
-// router.route("/")
-//   .get(applicationController.getAll)
-  // .post(postsController.saveArticle);
+const applicationController = require("../controllers/applicationController");
 
-// router.route('/api/scraper')
-//   .post(postsController.scraper)
-//   .get(postsController.scraper)
+router.route('/api/saveseason/')
+  .post(applicationController.saveSeason);
 
-//   router.route('/api/articles')
-//     .post(postsController.saveArticle)
+// router.route('/api/save')
+// .post(applicationController.save)
 
-//     router.route('/api/saved')
-//     .get(postsController.getAll)
 
-//     router.route('/api/delete')
-//     .post(postsController.deleteArticle)
+// router.route('/api/savedposts')
+// .get(applicationController.getSaved)
 
 // If no API routes are hit, send the React app
 router.use(function (req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"));
 });
+
 
 module.exports = router;

@@ -1,4 +1,5 @@
 import actionTypes from './actionTypes';
+import axios from 'axios';
 
 export function signupStep() {
     return {
@@ -24,3 +25,22 @@ export const saveHerosFocused = HerosFocused => {
         HerosFocused: HerosFocused,
     }
 }
+// export const saveAccount = Account => {
+//     return {
+//         type: actionTypes,
+//         Account: Account,
+//     }
+// }
+export const saveAccount = Account => {
+    return function(dispatch) {
+        console.log(Account)
+    //   axios
+    //     .post(`/api/saveseason/`, Account)
+    //     .then(data => {
+    //         console.log(data)
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    };
+  };

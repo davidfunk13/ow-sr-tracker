@@ -43,6 +43,8 @@ export default function accountsSavedReducer(state = initialState.accountsSavedF
           }
         ]
       }
+      case actionTypes.SAVE_ACCOUNT:
+      return 
     default:
       {
         return state;

@@ -5,5 +5,6 @@ const actions = {
     SAVE_BATTLETAG: 'SAVE_BATTLETAG',
     SAVE_STARTING_SR: 'SAVE_STARTING_SR',
     SAVE_HEROS_FOCUSED: 'SAVE_HEROS_FOCUSED',
+    SAVE_ACCOUNT: 'SAVE_ACCOUNT',
 }
 export default actions;
