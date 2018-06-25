@@ -7,7 +7,12 @@ h2 {
     font-size: $default-heading-2-size;
 }
 p {
+    text-indent: 1rem;
     font-size: $default-font-size
+}
+ol, li, ul {
+    text-indent: 5rem;
+    font-size: $default-font-size;
 }
 a{
     font-size: $default-font-size;

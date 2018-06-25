@@ -59,7 +59,7 @@ export const saveAccount = Account => {
         .get(`/api/getaccounts/`+ uid)
         .then(data => {
             console.log(data)
-            // dispatch(saveAccountSuccess(data.data));
+            dispatch(getAccountsSuccess(data.data));
         })
         .catch(error => {
             // dispatch(saveAccountFailure(error));
@@ -67,3 +67,10 @@ export const saveAccount = Account => {
         });
     }
   };
+
+  export const getAccountsSuccess = data =>{
+      return {
+          type: actionTypes.GET_ACCOUNTS_SUCCESS,
+          data: data,
+      }
+  }

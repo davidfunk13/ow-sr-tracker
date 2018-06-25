@@ -6,8 +6,10 @@ import * as accountsSavedFormActionCreators from '../../../actions/accountsSaved
 class StartingSR extends Component {
     state = {
         StartingSR: "",
+        formErrors: {StartingSR: ''},
+        srValid: false,
+        formValid: false,
       };
-
       handleInputChange = event => {
           let value = event.target.value;
           let name = event.target.name;

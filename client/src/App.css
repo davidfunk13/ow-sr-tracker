@@ -12,16 +12,21 @@ body {
   box-sizing: border-box; }
 
 h1 {
-  font-size: 3.5em; }
+  font-size: 2.8em; }
 
 h2 {
-  font-size: 2.5rem; }
+  font-size: 2.4rem; }
 
 p {
-  font-size: 2rem; }
+  text-indent: 1rem;
+  font-size: 1.8rem; }
+
+ol, li, ul {
+  text-indent: 5rem;
+  font-size: 1.8rem; }
 
 a {
-  font-size: 2rem; }
+  font-size: 1.8rem; }
 
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
@@ -30,7 +35,7 @@ a {
   border: 1px solid black;
   width: 20rem;
   height: 6rem;
-  font-size: 2.5rem; }
+  font-size: 2.4rem; }
   .btn--logout {
     position: absolute;
     bottom: 0; }

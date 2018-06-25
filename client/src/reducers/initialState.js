@@ -9,7 +9,8 @@ export default {
       BattleTag: "",
       StartingSR: "",
       HerosFocused: [],
-    }]
+    }],
+    seasons: [],
   },
-  seasons: [],
+
 };

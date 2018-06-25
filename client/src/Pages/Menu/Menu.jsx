@@ -23,8 +23,9 @@ const customStyles = {
     }
 };
 
+
 class Menu extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.accountsSavedFormActions.getAccounts(this.props.profile.sub)
     }
 
@@ -54,6 +55,7 @@ class Menu extends Component {
             default:
                 break;
         }
+
         return (
             <div className="container">
                 <ReactModal
@@ -69,21 +71,38 @@ class Menu extends Component {
                     <div className="battlenet-account-form">
                         <button className='btn btn--open-modal' onClick={() => this.props.modalActions.openModal()}>Open</button>
                     </div>
+                    <div className='seasons'>
+                        {!Array.isArray(this.props.accountsSavedForm.seasons) || !this.props.accountsSavedForm.seasons.length ?
+
+                            <div className='seasons__no'>
+                                <div>seasons no:(</div>
+                            </div>
+                            :
+                            <div className='seasons__yes'>
+                                <h2>You have a season saved with us! Your seasons:</h2>
+                                {console.log()}
+                                {this.props.accountsSavedForm.seasons.map(seasons => {
+                                    return (
+                                        <div className='season__yes--saved-account' key={seasons._id}>
+                                            <div >Your uid: {seasons.uid}</div>
+                                            <div>
+                                                <h2>BattleTag:</h2>
+                                                <p>{seasons.BattleTag}</p>
+                                                <p>make this a seprate component for new modal</p>
+                                            </div>
+                                        </div>
+                                    )
+                                })}
+
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
         )
     }
 }
-// function mapStateToProps(state) {
-//   return {
-//     user: state.user,
-//   };
-// }
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     userActions: bindActionCreators(userActionCreators, dispatch),
-//   };
-// }
+
 function mapStateToProps(state) {
     return {
         showModal: state.showModal,
