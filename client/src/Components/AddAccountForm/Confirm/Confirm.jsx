@@ -8,7 +8,7 @@ class Confirm extends Component {
     render() {
         let HerosArr = this.props.accountsSavedForm.accountsSaved['0'].HerosFocused
         let account = {
-            UID: this.props.profile.sub,
+            uid: this.props.profile.sub,
             Nickname: this.props.profile.nickname,
             BattleTag: this.props.accountsSavedForm.accountsSaved['0'].BattleTag,
             StartingSR: this.props.accountsSavedForm.accountsSaved['0'].StartingSR,

@@ -10,7 +10,14 @@ module.exports = {
 		})
 		.catch(err => { console.log(err)})	},
 	getAccounts: (req, res) => {
-		console.log(req.params);
-		// db.User.find()
+		let uid = req.params.uid;
+
+		console.log(uid)
+		db.User.find({'uid': uid}).then(data => {
+			console.log('hello')
+			res.json(data)
+		}).catch(err =>{
+			console.log(err)
+		})
 	}
 }
