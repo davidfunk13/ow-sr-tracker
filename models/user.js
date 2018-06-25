@@ -3,6 +3,14 @@ const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
+    UID:{
+        type: String,
+        required: true,
+    },
+    Nickname: {
+        type: String,
+        required: true,
+    },
     BattleTag: {
         type: String,
         required: true,

@@ -24,6 +24,9 @@ const customStyles = {
 };
 
 class Menu extends Component {
+    componentDidMount(){
+        this.props.accountsSavedFormActions.getAccounts(this.props.profile.sub)
+    }
 
     componentWillMount() {
         ReactModal.setAppElement('body');
@@ -61,7 +64,7 @@ class Menu extends Component {
                     <button className='btn btn--close-modal' onClick={() => this.props.modalActions.closeModal()}>close modal</button>
                 </ReactModal>
                 <div>
-                    <h1>thanks for logging in, {this.props.profile.nickname}</h1>
+                    <h1>Thanks for logging in, {this.props.profile.nickname}</h1>
 
                     <div className="battlenet-account-form">
                         <button className='btn btn--open-modal' onClick={() => this.props.modalActions.openModal()}>Open</button>

@@ -9,36 +9,38 @@ html {
   font-size: 62.5%; }
 
 body {
-  box-sizing: border-box;
-  font-size: 2rem; }
+  box-sizing: border-box; }
 
 h1 {
-  font-size: 2.5rem;
-  text-decoration: underline;
-  font-variant: small-caps; }
+  font-size: 3.5em; }
+
+h2 {
+  font-size: 2.5rem; }
+
+p {
+  font-size: 2rem; }
+
+a {
+  font-size: 2rem; }
 
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
 
 .btn {
-  width: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-size: 2rem;
-  height: 4rem;
-  border: 1px solid black; }
-  .btn--close-modal {
-    position: absolute;
-    bottom: 1rem; }
-  .btn--login {
-    position: absolute;
-    bottom: 0; }
+  border: 1px solid black;
+  width: 20rem;
+  height: 6rem;
+  font-size: 2.5rem; }
   .btn--logout {
     position: absolute;
     bottom: 0; }
-  .btn--submit-form {
+  .btn--close-modal {
     position: absolute;
-    height: 6rem; }
+    bottom: 1.25rem; }
+  .btn--submit-form {
+    width: 100%; }
+  .btn--save-info {
+    width: 100%; }
 
 .header {
   border: 1px solid black;
@@ -61,18 +63,30 @@ h1 {
   padding: 2rem; }
 
 .account-form {
-  margin-top: 5rem;
-  text-align: center; }
+  position: relative;
+  display: flex;
+  flex-flow: column; }
   .account-form__form {
-    text-align: center;
-    margin-top: 10rem; }
-    .account-form__form--starting-sr {
-      border: 1px solid black; }
+    height: 25rem; }
     .account-form__form--BattleTag {
-      position: relative;
+      margin-top: 5rem;
+      width: 100%;
+      text-align: center;
       font-size: 5rem;
-      width: 50rem;
+      margin-bottom: 1rem;
       border: 1px solid black; }
+    .account-form__form--starting-sr {
+      margin-top: 5rem;
+      width: 100%;
+      text-align: center;
+      font-size: 5rem;
+      margin-bottom: 1rem;
+      border: 1px solid black; }
+
+.account-info {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  text-align: center; }
 
 .app-header {
   height: 20vh;

@@ -1,21 +1,31 @@
-.account-form{
-    margin-top: 5rem;
-    text-align: center;
-    // border: 1px solid black;
-    // margin: 10rem;
+.account-form {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    // height: 90%;
     &__form {
-        text-align: center;
-        margin-top: 10rem;
-        &--starting-sr{
-            
-            border: 1px solid black;
-        }
-        &--BattleTag{
-            position: relative;
+    height: 25rem;
+        &--BattleTag {
+            margin-top: 5rem;
+            width: 100%;
+            text-align: center;
             font-size: 5rem;
-            width: 50rem;
+            margin-bottom: 1rem;
             border: 1px solid black;
         }
-        // border: 1px solid black;
+        &--starting-sr {
+            margin-top: 5rem;
+            width: 100%;
+            text-align: center;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            border: 1px solid black;
+        }
+
     }
+}
+.account-info{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    text-align: center;
 }

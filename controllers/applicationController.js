@@ -9,4 +9,8 @@ module.exports = {
 			console.log(err)
 		})
 		.catch(err => { console.log(err)})	},
+	getAccounts: (req, res) => {
+		console.log(req.params);
+		// db.User.find()
+	}
 }

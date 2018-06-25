@@ -1,27 +1,20 @@
 .btn {
-    width: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: $default-font-size;
-    height: 4rem;
     border: 1px solid black;
-
-    &--close-modal{
-        position: absolute;
-        bottom: 1rem;
-    }
-
-    &--login {
-        position: absolute;
-        bottom: 0;
-    }
+    width: 20rem;
+    height: 6rem;
+    font-size: $default-heading-2-size;
     &--logout {
         position: absolute;
         bottom: 0;
     }
-    &--submit-form {
+    &--close-modal {
         position: absolute;
-        height: 6rem;
+        bottom: 1.25rem; // width: 95%;
     }
-
+    &--submit-form {
+        width: 100%;
+    }
+    &--save-info {
+        width: 100%
+    }
 }

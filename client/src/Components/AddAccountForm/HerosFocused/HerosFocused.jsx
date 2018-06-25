@@ -40,7 +40,7 @@ class HerosFocused extends Component {
                         type="text"
                         placeholder="HerosFocused"
                     />
-                    <button onClick={this.handleFormSubmit}>Submit</button>
+                    <button className='btn btn--submit-form' onClick={this.handleFormSubmit}>Submit</button>
                 </form>
             </div>
         )

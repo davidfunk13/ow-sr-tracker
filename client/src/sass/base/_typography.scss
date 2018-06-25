@@ -1,5 +1,14 @@
 h1 {
     font-size: $default-heading-size;
-    text-decoration: underline;
-    font-variant: small-caps;
+    // text-decoration: underline;
+    // font-variant: small-caps;
+}
+h2 {
+    font-size: $default-heading-2-size;
+}
+p {
+    font-size: $default-font-size
+}
+a{
+    font-size: $default-font-size;
 }

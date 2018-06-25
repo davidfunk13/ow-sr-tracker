@@ -29,7 +29,7 @@ class BattleTag extends Component {
     render() {
         return (
             <div className='account-form'>
-                    <h1 className='u-margin-bottom-small'>Hello {this.props.profile.nickname}, Please tell us your BattleTag.</h1>
+                    <h1 className='u-margin-bottom-small'>please tell us your battletag.</h1>
                 <p>No account numbers are required, this is simply to put at the top of your spreadsheet in case you want to track another account.</p>
                 <form className="account-form__form">
                     <input

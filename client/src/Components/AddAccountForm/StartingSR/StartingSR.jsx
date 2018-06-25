@@ -7,7 +7,7 @@ class StartingSR extends Component {
     state = {
         StartingSR: "",
       };
-    
+
       handleInputChange = event => {
           let value = event.target.value;
           let name = event.target.name;
@@ -29,7 +29,6 @@ class StartingSR extends Component {
     render() {
         return (
             <div className='account-form'>
-
                     <h1 className='u-margin-bottom-small'>Hello {this.props.profile.nickname}</h1>
                 <form className="account-form__form">
                     <input
@@ -40,7 +39,7 @@ class StartingSR extends Component {
                         type="text"
                         placeholder="StartingSR"
                     />
-                    <button onClick={this.handleFormSubmit}>Submit</button>
+                    <button className='btn btn--submit-form' onClick={this.handleFormSubmit}>Submit</button>
                 </form>
             </div>
         )

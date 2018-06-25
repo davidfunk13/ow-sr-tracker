@@ -31,16 +31,39 @@ export const saveAccountSuccess = data => {
         data: data
     }
 }
+export const saveAccountFailure = (error) => {
+    return {
+        type: actionTypes.SAVE_ACCOUNT_FAILURE,
+        error,
+    }
+}
 export const saveAccount = Account => {
     return function(dispatch) {
         console.log(Account)
       axios
         .post(`/api/saveseason/`, Account)
         .then(data => {
-            dispatch(console.log(data))
+            console.log(data)
+            dispatch(saveAccountSuccess(data.data));
         })
         .catch(error => {
+            dispatch(saveAccountFailure(error));
           console.log(error);
         });
     };
+  };
+  export const getAccounts = uid => {
+    return function(dispatch) {
+        // console.log(uid)
+      axios
+        .get(`/api/getaccounts/`+ uid)
+        .then(data => {
+            console.log(data)
+            // dispatch(saveAccountSuccess(data.data));
+        })
+        .catch(error => {
+            // dispatch(saveAccountFailure(error));
+          console.log(error);
+        });
+    }
   };

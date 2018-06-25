@@ -10,44 +10,43 @@ export default function accountsSavedReducer(state = initialState.accountsSavedF
         ...state,
         step: state.step + 1,
       }
-    // update(state, {
-    //   step: {$set: state.step ++}
-    // })
+      // update(state, {
+      //   step: {$set: state.step ++}
+      // })
 
     case actionTypes.SAVE_BATTLETAG:
-    return {
-      ...state,
-      accountsSaved: [
-        {
+      return {
+        ...state,
+        accountsSaved: [{
           ...state.accountsSaved[0],
           BattleTag: action.BattleTag
-        }
-      ]
-    }
+        }]
+      }
     case actionTypes.SAVE_STARTING_SR:
       return {
         ...state,
-        accountsSaved: [
-          {
-            ...state.accountsSaved[0],
-            StartingSR: action.StartingSR
-          }
-        ]
+        accountsSaved: [{
+          ...state.accountsSaved[0],
+          StartingSR: action.StartingSR
+        }]
       }
     case actionTypes.SAVE_HEROS_FOCUSED:
       return {
         ...state,
-        accountsSaved: [
-          {
-            ...state.accountsSaved[0],
-            HerosFocused: state.accountsSaved[0].HerosFocused.concat(action.HerosFocused)   
-          }
-        ]
+        accountsSaved: [{
+          ...state.accountsSaved[0],
+          HerosFocused: state.accountsSaved[0].HerosFocused.concat(action.HerosFocused)
+        }]
       }
-      case actionTypes.SAVE_ACCOUNT_SUCCESS:
+    case actionTypes.SAVE_ACCOUNT_SUCCESS:
       return {
         ...state,
         account: action.data,
+      }
+    case actionTypes.GET_ACCOUNTS:
+      return {
+        ...state,
+        seasons: [action.data],
       }
     default:
       {
