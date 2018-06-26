@@ -6,29 +6,14 @@ import * as accountsSavedFormActionCreators from '../../../actions/accountsSaved
 class BattleTag extends Component {
     state = {
         BattleTag: "",
-        Errors: [],
+        Errors: "",
     };
 
     validate = (BattleTag) => {
-
-        // if (BattleTag.length === 0 && !this.state.Errors.includes('Battletag Cannot be Empty Field')) {
-        //     console.log('doesnt include')
-        //     this.setState({ Errors: this.state.Errors.concat('Battletag Cannot be Empty Field') });
-            
-        //     return this.state.Errors;
-          
-        // }
-        // console.log(this.state.Errors)
-        // if(BattleTag.length === 0 && this.state.Errors.includes('Battletag Cannot be Empty Field')) {
-        //     console.log('includes!')
-        //     return this.state.Errors;
-        // }
-        // if (!BattleTag.length === 0) {
-            this.setState({Errors: []})
-            this.props.accountsSavedFormActions.saveBattleTag(BattleTag)
-            this.props.accountsSavedFormActions.signupStep()            
-        // }
-        // console.log(this.state.Errors)
+        console.log(BattleTag)
+        
+      
+        console.log(this.state.Errors)
     }
 
     handleInputChange = event => {
@@ -43,7 +28,17 @@ class BattleTag extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         let BattleTag = this.state.BattleTag;
-        this.validate(BattleTag)
+        if (BattleTag === "") {
+            console.log('empty')
+            this.setState({ Errors: 'Battletag Cannot be Empty Field!'})
+            return this.state.Errors
+        }
+        if (BattleTag !== "") {
+            this.setState({Errors: []})
+            console.log(BattleTag)
+            this.props.accountsSavedFormActions.saveBattleTag(BattleTag)
+            this.props.accountsSavedFormActions.signupStep()            
+        }
     }
 
 
@@ -54,9 +49,7 @@ class BattleTag extends Component {
                 <h1 className='u-margin-bottom-small'>please tell us your battletag.</h1>
                 <p>No account numbers are required, this is simply to put at the top of your spreadsheet in case you want to track another account.</p>
                 <form className="account-form__form">
-                {this.state.Errors.length ? <div>{this.state.Errors.map(error => {
-                    <p>{error.error}</p>
-                })}</div>:<div></div>  }
+                {this.state.Errors ? <div><p>{this.state.Errors}</p></div> : <div><p>no errors to show</p></div> } 
                     <input
                     
                         className='account-form__form--BattleTag'
