@@ -11,24 +11,24 @@ class BattleTag extends Component {
 
     validate = (BattleTag) => {
 
-        if (BattleTag.length === 0 && !this.state.Errors.includes('Battletag Cannot be Empty Field')) {
-            console.log('doesnt include')
-            this.setState({ Errors: this.state.Errors.concat('Battletag Cannot be Empty Field') });
+        // if (BattleTag.length === 0 && !this.state.Errors.includes('Battletag Cannot be Empty Field')) {
+        //     console.log('doesnt include')
+        //     this.setState({ Errors: this.state.Errors.concat('Battletag Cannot be Empty Field') });
             
-            return this.state.Errors;
+        //     return this.state.Errors;
           
-        }
-        console.log(this.state.Errors)
-        if(BattleTag.length === 0 && this.state.Errors.includes('Battletag Cannot be Empty Field')) {
-            console.log('includes!')
-            return this.state.Errors;
-        }
-        if (!BattleTag.length === 0) {
+        // }
+        // console.log(this.state.Errors)
+        // if(BattleTag.length === 0 && this.state.Errors.includes('Battletag Cannot be Empty Field')) {
+        //     console.log('includes!')
+        //     return this.state.Errors;
+        // }
+        // if (!BattleTag.length === 0) {
             this.setState({Errors: []})
             this.props.accountsSavedFormActions.saveBattleTag(BattleTag)
             this.props.accountsSavedFormActions.signupStep()            
-        }
-        console.log(this.state.Errors)
+        // }
+        // console.log(this.state.Errors)
     }
 
     handleInputChange = event => {

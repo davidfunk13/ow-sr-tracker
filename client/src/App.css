@@ -31,6 +31,9 @@ a {
 .u-margin-bottom-small {
   margin-bottom: 2rem; }
 
+.u-margin-top-small {
+  margin-top: 2rem; }
+
 .btn {
   border: 1px solid black;
   width: 20rem;
