@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as modalActionCreators from "../../actions/modalActions";
 import * as accountsSavedFormActionCreators from "../../actions/accountsSavedActions";
-import StartingSR from "../../Components/AddAccountForm/StartingSR/StartingSR";
-import HerosFocused from "../../Components/AddAccountForm/HerosFocused/HerosFocused";
-import Confirm from "../../Components/AddAccountForm/Confirm/Confirm";
+// import StartingSR from "../../Components/AddAccountForm/StartingSR/StartingSR";
+// import HerosFocused from "../../Components/AddAccountForm/HerosFocused/HerosFocused";
+// import Confirm from "../../Components/AddAccountForm/Confirm/Confirm";
 
 const customStyles = {
   content: {
@@ -30,35 +30,15 @@ class Menu extends Component {
 
   componentWillMount() {
     ReactModal.setAppElement("body");
-    console.log(this.props);
   }
-  componentDidUpdate() {
-    console.log(this.props);
-  }
-
+componentWillUpdate(){
+}
   render() {
-    let accountsSavedForm;
-    switch (this.props.accountsSavedForm.step) {
-      case 1:
-        accountsSavedForm = <BattleTag {...this.props} />;
-        break;
-      case 2:
-        accountsSavedForm = <StartingSR {...this.props} />;
-        break;
-      case 3:
-        accountsSavedForm = <HerosFocused {...this.props} />;
-        break;
-      case 4:
-        accountsSavedForm = <Confirm {...this.props} />;
-        break;
-      default:
-        break;
-    }
 
     return (
       <div className="container">
         <ReactModal isOpen={this.props.showModal} style={customStyles}>
-          {accountsSavedForm}
+        <BattleTag {...this.props}/>
           <button
             className="btn btn--close-modal"
             onClick={() => this.props.modalActions.closeModal()}
@@ -69,7 +49,7 @@ class Menu extends Component {
         <div>
           <h1 className='u-margin-bottom-small'>Thanks for logging in, {this.props.profile.nickname}</h1>
 
-        <h2 className='u-margin-bottom-small'>Start Tracking a New account</h2>
+          <h2 className='u-margin-bottom-small'>Start Tracking a New account</h2>
           <div className="battlenet-account-form">
             <button
               className="btn btn--open-modal"
@@ -79,33 +59,33 @@ class Menu extends Component {
             </button>
           </div>
           <div className="seasons u-margin-top-small">
-            {!Array.isArray(this.props.accountsSavedForm.seasons) ||
-            !this.props.accountsSavedForm.seasons.length ? (
-              <div className="seasons__no">
-                <p>We have no accounts saved for you.</p>
-                <p>Please see above to start tracking a new one!</p>
-              </div>
-            ) : (
-              <div className="seasons__yes">
-                <h2>You have a season saved with us! Your seasons:</h2>
-                {console.log()}
-                {this.props.accountsSavedForm.seasons.map(seasons => {
-                  return (
-                    <div
-                      className="season__yes--saved-account u-margin-top-small"
-                      key={seasons._id}
-                    >
-                      <div>Your uid: {seasons.uid}</div>
-                      <div>
-                        <h2>BattleTag:</h2>
-                        <p>{seasons.BattleTag}</p>
-                        <p>make this a seprate component for new modal</p>
+            {!Array.isArray(this.props.accountsSavedForm.account) ||
+              !this.props.accountsSavedForm.account.length ? (
+                <div className="seasons__no">
+                  <p>We have no accounts saved for you.</p>
+                  <p>Please see above to start tracking a new one!</p>
+                </div>
+              ) : (
+                <div className="seasons__yes">
+                  <h2>You have a season saved with us! Your seasons:</h2>
+                  {console.log()}
+                  {this.props.accountsSavedForm.account.map(accounts => {
+                    return (
+                      <div
+                        className="season__yes--saved-account u-margin-top-small"
+                        key={accounts._id}
+                      >
+                        <div>Your uid: {accounts.uid}</div>
+                        <div>
+                          <h2>BattleTag:</h2>
+                          <p>{accounts.BattleTag}</p>
+                          <p>make this a seprate component for new modal</p>
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
+                    );
+                  })}
+                </div>
+              )}
           </div>
         </div>
       </div>
@@ -116,7 +96,7 @@ class Menu extends Component {
 function mapStateToProps(state) {
   return {
     showModal: state.showModal,
-    accountsSavedForm: state.accountsSavedForm
+    accountsSavedForm: state.accountsSavedForm,
   };
 }
 

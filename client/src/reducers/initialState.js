@@ -10,7 +10,7 @@ export default {
       StartingSR: "",
       HerosFocused: [],
     }],
-    seasons: [],
+    account: [],
   },
 
 };

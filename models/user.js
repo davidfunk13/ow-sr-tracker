@@ -7,22 +7,22 @@ var UserSchema = new Schema({
         type: String,
         required: true,
     },
-    Nickname: {
-        type: String,
-        required: true,
-    },
+    // Nickname: {
+        // type: String,
+        // required: true,
+    // },
     BattleTag: {
         type: String,
         required: true,
     },
-    StartingSR: {
-        type: Number,
-        required: true,
-    },
-    HerosFocused: {
-        type: Array,
-        required: true,
-    }
+    // StartingSR: {
+    //     type: Number,
+    //     required: true,
+    // },
+    // HerosFocused: {
+    //     type: Array,
+    //     required: true,
+    // }
 }, {timestamps: Date});
 
 const User = mongoose.model('User', UserSchema);

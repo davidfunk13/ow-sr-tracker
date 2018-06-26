@@ -7,6 +7,7 @@ import Menu from './Pages/Menu/Menu';
 import Header from './Components/Header/Header'
 import Main from './Components/Main/Main';
 import NotFound from './Components/NotFound/NotFound';
+import Account from './Pages/Account/Account';
 
 const auth = new Auth();
 
@@ -43,6 +44,19 @@ export const makeMainRoutes = () => {
             <div>
               <Header profile={auth.getProfile()} auth={auth} {...props} />
               <Menu profile={auth.getProfile()} auth={auth} {...props} />
+            </div>
+            :
+            <div>
+              <Header profile={auth.getProfile()} auth={auth} {...props} />
+              <NotFound />
+            </div>
+        }
+        />
+        <Route exact path='/accounts' render={(props) =>
+          auth.isAuthenticated() ?
+            <div>
+              <Header profile={auth.getProfile()} auth={auth} {...props} />
+              <Account profile={auth.getProfile()} auth={auth} {...props} />
             </div>
             :
             <div>

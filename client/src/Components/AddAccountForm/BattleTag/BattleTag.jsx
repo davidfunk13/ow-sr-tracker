@@ -3,18 +3,12 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as modalActionCreators from '../../../actions/modalActions';
 import * as accountsSavedFormActionCreators from '../../../actions/accountsSavedActions';
+// import Menu from '../../../Pages/Menu/Menu';
 class BattleTag extends Component {
     state = {
         BattleTag: "",
         Errors: "",
     };
-
-    validate = (BattleTag) => {
-        console.log(BattleTag)
-        
-      
-        console.log(this.state.Errors)
-    }
 
     handleInputChange = event => {
         let value = event.target.value;
@@ -28,6 +22,7 @@ class BattleTag extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         let BattleTag = this.state.BattleTag;
+        let uidOBJ = { uid: this.props.profile.sub, BattleTag: BattleTag}
         if (BattleTag === "") {
             console.log('empty')
             this.setState({ Errors: 'Battletag Cannot be Empty Field!'})
@@ -35,9 +30,8 @@ class BattleTag extends Component {
         }
         if (BattleTag !== "") {
             this.setState({Errors: []})
-            console.log(BattleTag)
-            this.props.accountsSavedFormActions.saveBattleTag(BattleTag)
-            this.props.accountsSavedFormActions.signupStep()            
+            console.log(uidOBJ)
+            this.props.accountsSavedFormActions.createUserNode(uidOBJ)            
         }
     }
 
@@ -51,7 +45,6 @@ class BattleTag extends Component {
                 <form className="account-form__form">
                 {this.state.Errors ? <div><p>{this.state.Errors}</p></div> : <div><p>no errors to show</p></div> } 
                     <input
-                    
                         className='account-form__form--BattleTag'
                         value={this.state.BattleTag}
                         name="BattleTag"

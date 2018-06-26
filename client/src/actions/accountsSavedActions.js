@@ -34,9 +34,34 @@ export const saveAccountSuccess = data => {
 export const saveAccountFailure = (error) => {
     return {
         type: actionTypes.SAVE_ACCOUNT_FAILURE,
-        error,
+        error: error,
     }
 }
+export const createUserSuccess = (data) => {
+    return {
+        type: actionTypes.CREATE_USER_SUCCESS,
+        data: data,
+    }
+}
+export const createUserFailure = (error) => {
+    return{
+        type: actionTypes.CREATE_USER_FAILURE,
+        error: error,
+    }
+}
+
+export const createUserNode = (uidOBJ) => {
+    return function(dispatch) {
+        axios.post('/api/createuser/', uidOBJ)
+            .then(data => {
+                dispatch(createUserSuccess(data.data));
+            })
+            .catch(error => {
+                dispatch(createUserFailure(error))
+            });
+    };
+};
+
 export const saveAccount = Account => {
     return function(dispatch) {
         console.log(Account)
