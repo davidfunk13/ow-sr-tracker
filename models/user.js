@@ -15,6 +15,12 @@ var UserSchema = new Schema({
         type: String,
         required: true,
     },
+    Seasons: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: "Season",
+        }
+    ]
     // StartingSR: {
     //     type: Number,
     //     required: true,
