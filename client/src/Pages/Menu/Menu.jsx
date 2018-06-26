@@ -69,27 +69,21 @@ class Menu extends Component {
         <div>
           <h1 className='u-margin-bottom-small'>Thanks for logging in, {this.props.profile.nickname}</h1>
 
-        <h2 className='u-margin-bottom-small'>Start Tracking a New season</h2>
+        <h2 className='u-margin-bottom-small'>Start Tracking a New account</h2>
           <div className="battlenet-account-form">
             <button
               className="btn btn--open-modal"
               onClick={() => this.props.modalActions.openModal()}
             >
-              Track New Season
+              Track New Account
             </button>
           </div>
           <div className="seasons u-margin-top-small">
             {!Array.isArray(this.props.accountsSavedForm.seasons) ||
             !this.props.accountsSavedForm.seasons.length ? (
               <div className="seasons__no">
-                <p>We have no Seasons saved for you.</p>
-                <p>Would You like to start tracking one?</p>
-                <button
-                  className="btn btn--open-modal"
-                  onClick={() => this.props.modalActions.openModal()}
-                >
-                  Track New Season
-                </button>
+                <p>We have no accounts saved for you.</p>
+                <p>Please see above to start tracking a new one!</p>
               </div>
             ) : (
               <div className="seasons__yes">
