@@ -33,6 +33,7 @@ class BattleTag extends Component {
             console.log(uidOBJ)
             this.props.accountsSavedFormActions.createUserNode(uidOBJ)            
         }
+        this.props.modalActions.closeModal()
     }
 
 
